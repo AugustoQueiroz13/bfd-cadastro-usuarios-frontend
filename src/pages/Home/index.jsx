@@ -7,7 +7,10 @@ function Home() {
   let users = []
 
   async function getUsers() {
-    users = await api.get('/users')
+    const usersFromApi = await api.get('/users')
+
+    users = usersFromApi.data
+    console.log(users)
   }
 
   useEffect(() => {
